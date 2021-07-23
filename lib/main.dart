@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:rive/rive.dart';
 
+import 'package:union_project/iPhone6781.dart';
+
 void main() {
   runApp(MaterialApp(home: PlayPauseAnimation()));
 }
@@ -17,8 +19,8 @@ class _PlayPauseAnimationState extends State<PlayPauseAnimation> {
   late RiveAnimationController _controller;
 
   // Toggles between play and pause animation states
-  void _togglePlay() =>
-      setState(() => _controller.isActive = !_controller.isActive);
+  // void _togglePlay() =>
+  //     setState(() => _controller.isActive = !_controller.isActive);
 
   /// Tracks if the animation is playing by whether controller is running
   bool get isPlaying => _controller.isActive;
@@ -34,7 +36,16 @@ class _PlayPauseAnimationState extends State<PlayPauseAnimation> {
     return Scaffold(
       body: Center(child: RiveAnimation.asset('assets/unio.riv')),
       floatingActionButton: FloatingActionButton(
-        onPressed: _togglePlay,
+        onPressed: () async {
+          //ここに押したら反応するコードを書く
+          final result = await Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => iPhone6781(), // NextPage classに移動
+            ),
+          );
+          print(result);
+        },
         tooltip: isPlaying ? 'Pause' : 'Play',
       ),
     );
