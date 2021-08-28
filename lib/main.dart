@@ -76,15 +76,6 @@ class _MyHomePageState extends State<MyHomePage>
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.blue[900],
-      // Appbar
-      appBar: AppBar(
-        backgroundColor: Colors.blue[900],
-        title: Text(
-          'BottomNav',
-          style: TextStyle(fontSize: 16),
-        ),
-      ),
-      // ),
       // ページビュー
       body: PageView(
           controller: _pageController,
@@ -99,9 +90,9 @@ class _MyHomePageState extends State<MyHomePage>
           },
           // ページ下部のナビゲーションメニューに相当する各ページビュー。後述
           children: [
+            Home(),
             Chat(),
             Mypage(),
-            Home(),
           ]),
       // ページ下部のナビゲーションメニュー
       bottomNavigationBar: BottomNavigationBar(

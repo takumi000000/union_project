@@ -7,12 +7,12 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.green[100],
+        backgroundColor: Colors.white,
         // Appbar
         appBar: AppBar(
-          backgroundColor: Colors.green[100],
+          backgroundColor: Colors.red,
           title: Text(
-            'home',
+            "$pageName",
             style: TextStyle(fontSize: 16),
           ),
         ),
